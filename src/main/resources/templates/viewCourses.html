@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type="text/css" href="css/mycss.css">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Courses Page</title>
+</head>
+<body>
+<h1>View Courses Here</h1>
+
+<table border="1">
+<tr>
+<th>Course ID</th>
+<th>Course Name</th>
+<th>Course Code</th>
+</tr>
+<tr th:each="c : ${courses}">
+<td th:text="${c.id}"></td>
+<td th:text="${c.courseName}"></td>
+<td th:text="${c.courseCode}"></td>
+<td><a th:href="@{/viewCourse/{id}(id=${c.id})}">View Details</a></td>
+</tr>
+</table>
+<h3><a href="/">Go Back</a></h3>
+</body>
+</html>

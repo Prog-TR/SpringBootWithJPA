@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Home Page</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+  font-size: 16px;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            border: 2px solid green;
+        }
+        .container > div {
+            border: 2px solid green;
+            padding: 10px;
+        }
+        .add-links {
+            grid-column: 1 / 2;
+        }
+        .assign-links {
+            grid-column: 2 / 3;
+        }
+        .view-links {
+            grid-column: 3 / 4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page - Assignment 1 Tirth Rana</h1>
+    <div class="container">
+        <div class="add-links">
+            <h2>Add Links:</h2>
+            <h3><a href="/addStudent">Add Student</a></h3>
+            <h3><a href="/addCourse">Add Course</a></h3>
+            <h3><a href="/addProfessor">Add Professor</a></h3>
+        </div>
+        <div class="assign-links">
+            <h2>Assign Links:</h2>
+            <h3><a href="/assignProfessor">Assign a Professor to a Course</a></h3>
+            <h3><a href="/assignStudent">Assign a Student to a Course</a></h3>
+        </div>
+        <div class="view-links">
+            <h2>View Links:</h2>
+            <h3><a href="/viewStudents">View Students</a></h3>
+            <h3><a href="/viewProfessors">View Professors</a></h3>
+            <h3><a href="/viewCourses">View Courses</a></h3>
+        </div>
+    </div>
+</body>
+</html>

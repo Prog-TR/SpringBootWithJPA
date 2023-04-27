@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+body { font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: #f1f1f1;
+}
+
+h2 {
+  text-align: center;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  border: 2px solid #4CAF50;
+  padding: 20px;
+  background-color: #fff;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h2>Assign Professor to Course</h2>
+
+<form method="post" th:action="@{/assignProfessor}">
+
+    <label>Course:
+        <select name="courseId">
+            <option th:each="course : ${courses}" th:value="${course.id}" th:text="${course.courseName}"></option>
+        </select>
+    </label>
+    <br>
+    <label>Professor:
+        <select name="professorId">
+            <option th:each="professor : ${professors}" th:value="${professor.id}" th:text="${professor.professorName}"></option>
+        </select>
+    </label>
+    <br>
+    <input type="submit" value="Assign Professor">
+</form>
+
+<h3><a href="/">Go Home</a></h3>
+</body>
+</html>
